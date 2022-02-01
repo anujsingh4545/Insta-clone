@@ -56,7 +56,7 @@ function Post({ id, username, userImg, img, caption }) {
   };
 
   return (
-    <div className="bg-[#7c7c7c2b]   rounded-2xl  w-[95%] sm:w-[80%] md:w-[90%] my-3 md:my-5 m-auto ">
+    <div className="bg-[#7c7c7c2b]   rounded-2xl min-w-[95%]  w-[95%] sm:w-[80%] md:w-[90%] my-3 md:my-5 m-auto ">
       {/* Header */}
       <div className="flex items-center p-3">
         <img src={userImg} alt="Image" className="rounded-full h-12 w-12 object-contain  border p-1 mr-3 " />
@@ -65,7 +65,7 @@ function Post({ id, username, userImg, img, caption }) {
       </div>
 
       {/* Image */}
-      <img src={img} alt="" className="object-cover w-[90%] m-auto rounded-xl " />
+      <img src={img} alt="" className="object-cover min-w-[90%] w-[90%] m-auto rounded-xl " />
 
       {/* Buttons */}
 
