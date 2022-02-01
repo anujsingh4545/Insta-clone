@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .navBtn {
+    @apply hidden h-6 w-8 md:inline-flex cursor-pointer  hover:scale-125  transition-all duration-150 ease-out;
+  }
+
+  .btns {
+    @apply h-7  md:h-8 hover:scale-125 cursor-pointer transition-all duration-150 ease-out;
+  }
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  font-size: 82.5%;
+}
+
+body {
+  min-width: 400px;
+  color: white;
+  background-color: black;
+}

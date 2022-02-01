@@ -6,9 +6,17 @@
     "start": "next start"
   },
   "dependencies": {
+    "@headlessui/react": "^1.4.2",
+    "@heroicons/react": "^1.0.5",
+    "faker": "^6.6.6",
+    "firebase": "^9.6.2",
     "next": "latest",
+    "next-auth": "4.0.0-beta.7",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "react-dom": "^17.0.2",
+    "react-moment": "^1.1.1",
+    "recoil": "^0.5.2",
+    "tailwind-scrollbar-hide": "^1.1.7"
   },
   "devDependencies": {
     "@types/node": "17.0.4",
