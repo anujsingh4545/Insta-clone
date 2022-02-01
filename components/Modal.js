@@ -64,8 +64,8 @@ function Modal() {
               <img src={selectedFile} alt="error" className="w-[90%] my-5 rounded object-contain cursor-pointer" onClick={() => SetSelectedFile(null)} />
             ) : (
               <>
-                <section className="relative w-[4rem]  rounded-full bg-red-100 m-auto mt-5">
-                  <CameraIcon className="relative p-2 text-red-400 cursor-pointer" onClick={() => filePicker.current.click()} />
+                <section className="relative   rounded-full bg-red-100 m-auto mt-5">
+                  <CameraIcon className="relative p-2 h-[5rem] text-red-400 cursor-pointer" onClick={() => filePicker.current.click()} />
                   <input type="file" className="hidden" ref={filePicker} onChange={addImageToPost} />
                 </section>
                 <p className="text-center my-3 text-[1rem] font-semibold text-[#777] xl:text-[1.3rem] italic">Upload a photo</p>
