@@ -9,6 +9,7 @@ import { ref, getDownloadURL, uploadString } from "firebase/storage";
 
 function Modal() {
   const { data: session } = useSession();
+
   const [open, setOpen] = useRecoilState(modalState);
 
   const filePicker = useRef(null);
@@ -25,6 +26,7 @@ function Modal() {
       caption: captionRef.current.value,
       profileImg: session.user.image,
       timeStamp: serverTimestamp(),
+      userId: session.user.uid,
     });
 
     const imageRef = ref(storage, `posts/${docRef.id}/image`);

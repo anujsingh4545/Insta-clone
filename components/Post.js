@@ -1,5 +1,5 @@
 import { async } from "@firebase/util";
-import { BookmarkIcon, ChatIcon, DotsHorizontalIcon, EmojiHappyIcon, HeartIcon, TrashIcon } from "@heroicons/react/outline";
+import { BookmarkIcon, ChatIcon, DotsHorizontalIcon, EmojiHappyIcon, HeartIcon, TrashIcon, PaperAirplaneIcon } from "@heroicons/react/outline";
 import { HeartIcon as HeartIconFilled } from "@heroicons/react/solid";
 import { addDoc, collection, deleteDoc, doc, onSnapshot, orderBy, query, serverTimestamp, setDoc } from "firebase/firestore";
 import { useSession } from "next-auth/react";
@@ -7,7 +7,7 @@ import { Component, useEffect, useState } from "react";
 import Moment from "react-moment";
 import { db } from "../firebase";
 
-function Post({ id, username, userImg, img, caption }) {
+function Post({ id, username, userImg, img, caption, userID }) {
   const { data: session } = useSession();
 
   const [comment, setComment] = useState("");
@@ -50,7 +50,6 @@ function Post({ id, username, userImg, img, caption }) {
       });
     }
   };
-
   const deletePost = async () => {
     await deleteDoc(doc(db, "posts", id));
   };
@@ -73,9 +72,9 @@ function Post({ id, username, userImg, img, caption }) {
         <div className="flex justify-between px-5  py-3 ">
           <div className="flex space-x-3 ">
             {hasLiked ? <HeartIconFilled onClick={likePost} className="btns text-red-600" /> : <HeartIcon onClick={likePost} className="btns " />}
-
             <ChatIcon className="btns" />
-            <TrashIcon className="btns" onClick={deletePost} />
+
+            {userID === session?.user?.uid ? <TrashIcon className="btns" onClick={deletePost} /> : <PaperAirplaneIcon className="btns" />}
           </div>
           <BookmarkIcon className="btns " />
         </div>

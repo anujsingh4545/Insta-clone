@@ -16,7 +16,7 @@ function Posts() {
   return (
     <div className=" md:w-[60%] relative   md:max-h-[90vh] overflow-y-auto scrollbar-hide  min-w-[100%] md:min-w-[60%] ">
       {posts.map((post) => (
-        <Post key={post.id} id={post.id} username={post.data().username} userImg={post.data().profileImg} img={post.data().image} caption={post.data().caption} />
+        <Post key={post.id} id={post.id} username={post.data().username} userImg={post.data().profileImg} img={post.data().image} caption={post.data().caption} userID={post.data().userId} />
       ))}
     </div>
   );
